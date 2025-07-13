@@ -1,0 +1,147 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  background: #0a1026;
+  color: #fff;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: background 0.5s, color 0.5s;
+  position: relative;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .mood-button {
+    width: 90vw;
+    margin: 0.5rem 0;
+  }
+}
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+.mood-button {
+  background: rgba(34, 34, 34, 0.85);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+.mood-button:hover,
+.mood-button:focus {
+  background: #444;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.controls {
+  margin-bottom: 2rem;
+}
+.preview-box {
+  margin: 2rem auto 0 auto;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  padding: 2rem 1rem 1.5rem 1rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.7s;
+}
+.preview-box.active {
+  display: flex;
+}
+.playlist-cover {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.playlist-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.playlist-desc {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+.spotify-link {
+  display: inline-block;
+  background: #1db954;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+.spotify-link:hover {
+  background: #159c41;
+}
+.mode-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s;
+}
+.mode-toggle:hover {
+  background: #444;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body.light-mode {
+  background: #f6faff;
+  color: #222;
+}
+body.light-mode .mood-button {
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  border: 2px solid #222;
+}
+body.light-mode .mood-button:hover {
+  background: #eee;
+}
+body.light-mode .preview-box {
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+}
+body.light-mode .playlist-desc {
+  color: #444;
+}
+body.light-mode .mode-toggle {
+  background: #eee;
+  color: #222;
+}
+body.light-mode .mode-toggle:hover {
+  background: #ddd;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoodTunes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas
+      id="bgCanvas"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      "
+    ></canvas>
+    <button class="mode-toggle" id="modeToggle" title="Toggle dark/light mode">
+      🌙
+    </button>
+    <h1>🎧 MoodTunes</h1>
+    <p>Pick your mood, get a playlist.</p>
+    <div class="controls">
+      <button class="mood-button" onclick="play('happy')">😊 Happy</button>
+      <button class="mood-button" onclick="play('chill')">😌 Chill</button>
+      <button class="mood-button" onclick="play('sad')">😢 Sad</button>
+      <button class="mood-button" onclick="play('workout')">💪 Workout</button>
+      <button class="mood-button" onclick="play('party')">🕺 Party</button>
+      <button class="mood-button" onclick="play('focus')">🧠 Focus</button>
+      <button class="mood-button" onclick="randomMood()">🎲 Random Mood</button>
+    </div>
+    <div class="preview-box" id="previewBox">
+      <img
+        src=""
+        alt="Playlist cover"
+        class="playlist-cover"
+        id="playlistCover"
+        style="display: none"
+      />
+      <div class="playlist-title" id="playlistTitle"></div>
+      <div class="playlist-desc" id="playlistDesc"></div>
+      <a href="#" target="_blank" class="spotify-link" id="spotifyLink"
+        >Open in Spotify</a
+      >
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
